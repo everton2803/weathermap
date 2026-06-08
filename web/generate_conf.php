@@ -71,12 +71,29 @@
             <div class="config-info">
                 <strong>Nota:</strong> Este script gera arquivos <code>.conf</code> a partir dos arquivos JSON 
                 na pasta <code>maps/</code>. Selecione um arquivo ou deixe em branco para processar todos.
+                <br><strong>Nota:</strong> Preencha a URL e o token do Zabbix para gerar URLs de gráficos corretas.
+                A URL deve ser no formato: <code>https://zabbix.example.com</code> (sem /api_jsonrpc.php)
             </div>
             
             <form method="POST">
                 <div class="form-group">
+                    <label for="url">URL do Zabbix *</label>
+                    <input type="url" id="url" name="url" placeholder="https://zabbix.example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="token">Token de API do Zabbix *</label>
+                    <input type="password" id="token" name="token" placeholder="SEU_TOKEN_AQUI" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="api_url">URL da API do Zabbix (JSON-RPC) *</label>
+                    <input type="url" id="api_url" name="api_url" placeholder="https://zabbix.example.com/api_jsonrpc.php" required>
+                </div>
+                
+                <div class="form-group">
                     <label for="maps_dir">Diretório dos Mapas</label>
-                    <input type="text" id="maps_dir" name="maps_dir" value="maps" placeholder="maps">
+                    <input type="text" id="maps_dir" name="maps_dir" value="web/maps" placeholder="web/maps">
                 </div>
                 
                 <div class="form-group">
@@ -84,7 +101,7 @@
                     <select id="selected_file" name="selected_file">
                         <option value="">-- Todos os arquivos --</option>
                         <?php
-                        $default_maps_dir = __DIR__ . '/../maps';
+                        $default_maps_dir = __DIR__ . '/maps';
                         if (is_dir($default_maps_dir)) {
                             $files = glob($default_maps_dir . '/*.json');
                             foreach ($files as $file) {
@@ -108,7 +125,10 @@
             if ($_POST) {
                 // Usa caminhos relativos baseados no diretório do script atual
                 $project_root = __DIR__ . '/..';
-                $maps_dir = $_POST['maps_dir'] ?? 'maps';
+                $url = $_POST['url'] ?? '';
+                $token = $_POST['token'] ?? '';
+                $api_url = $_POST['api_url'] ?? '';
+                $maps_dir = $_POST['maps_dir'] ?? 'web/maps';
                 $output_dir = $_POST['output_dir'] ?? 'configs';
                 $abs_maps_dir = $project_root . '/' . $maps_dir;
                 $abs_output_dir = $project_root . '/' . $output_dir;
@@ -118,6 +138,9 @@
                 $cmd = "cd " . escapeshellarg($project_root) . " && python3 " . escapeshellarg($project_root . "/web/generate_conf.py");
                 $cmd .= " -m " . escapeshellarg($abs_maps_dir);
                 $cmd .= " -o " . escapeshellarg($abs_output_dir);
+                $cmd .= " -u " . escapeshellarg($url);
+                $cmd .= " -t " . escapeshellarg($token);
+                $cmd .= " --api-url " . escapeshellarg($api_url);
                 
                 if ($selected_file) {
                     $cmd .= " -f " . escapeshellarg($abs_maps_dir . '/' . $selected_file);

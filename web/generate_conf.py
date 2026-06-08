@@ -9,6 +9,7 @@ import os
 import glob
 import re
 import argparse
+import requests
 
 
 def load_triggers_data(triggers_file="triggers_data.json"):
@@ -84,6 +85,20 @@ def build_trigger_host_map(triggers_data):
     return trigger_host_map
 
 
+def build_hostid_hostname_map(triggers_data):
+    """Constrói um mapeamento hostid -> host name a partir dos triggers"""
+    hostid_hostname_map = {}
+    if triggers_data and 'triggers' in triggers_data:
+        for trigger in triggers_data['triggers']:
+            hosts = trigger.get('hosts', [])
+            for host in hosts:
+                hostid = host.get('hostid')
+                host_name = host.get('host', '')
+                if hostid and host_name:
+                    hostid_hostname_map[str(hostid)] = host_name
+    return hostid_hostname_map
+
+
 def get_bandwidth_from_label(label):
     """
     Determina o valor de BANDWIDTH baseado no label do link.
@@ -111,7 +126,55 @@ def get_bandwidth_from_label(label):
     return bandwidth_map.get(label_lower)
 
 
-def generate_conf_from_json(json_path, output_dir=".", maps_dir="web/maps"):
+def get_zabbix_host(api_url, token, hostid):
+    """
+    Busca o nome do host na API do Zabbix usando o hostid como filtro.
+    
+    Args:
+        api_url: URL da API do Zabbix (ex: http://zabbix.example.com/api_jsonrpc.php)
+        token: Token de autenticação da API do Zabbix
+        hostid: ID do host a ser buscado
+    
+    Returns:
+        String com o nome do host (campo 'host') ou None se não encontrado
+    """
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    
+    payload = {
+        "jsonrpc": "2.0",
+        "method": "host.get",
+        "params": {
+            "output": ["hostid", "host"],
+            "hostids": [hostid]
+        },
+        "id": 1,
+        "auth": token
+    }
+    
+    try:
+        response = requests.post(
+            api_url,
+            headers=headers,
+            json=payload,
+            timeout=30
+        )
+        response.raise_for_status()
+        result = response.json()
+        if "error" in result:
+            print(f"Erro da API do Zabbix ao buscar host {hostid}: {result['error']}")
+            return None
+        hosts = result.get('result', [])
+        if hosts:
+            return hosts[0].get('host')
+        return None
+    except Exception as e:
+        print(f"Erro ao buscar host {hostid} na API do Zabbix: {e}")
+        return None
+
+
+def generate_conf_from_json(json_path, output_dir=".", maps_dir="web/maps", zabbix_url="http://zabbix.iper.net.br:8070", zabbix_api_url=None, zabbix_token=None):
     """
     Gera um arquivo .conf a partir de um arquivo JSON.
     
@@ -119,15 +182,21 @@ def generate_conf_from_json(json_path, output_dir=".", maps_dir="web/maps"):
         json_path: Caminho para o arquivo JSON
         output_dir: Diretório de saída para o arquivo .conf
         maps_dir: Diretório dos arquivos JSON (usado para encontrar triggers)
+        zabbix_url: URL base do Zabbix para gráficos (padrão: http://zabbix.iper.net.br:8070)
     """
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
     # Encontra e carrega o arquivo de triggers correspondente
-    triggers_file = find_triggers_file(json_path, maps_dir)
+    # Usa o diretório de triggers baseado no caminho do mapa
+    triggers_dir = os.path.join(os.path.dirname(json_path), '..', 'triggers')
+    if not os.path.exists(triggers_dir):
+        triggers_dir = 'web/triggers'
+    triggers_file = find_triggers_file(json_path, triggers_dir)
     triggers_data = load_triggers_data(triggers_file) if triggers_file else None
     trigger_itemid_map = build_trigger_itemid_map(triggers_data)
     trigger_host_map = build_trigger_host_map(triggers_data)
+    hostid_hostname_map = build_hostid_hostname_map(triggers_data)
     
     # Extrai o nome do mapa
     name = data.get('name', 'unknown')
@@ -211,18 +280,30 @@ LINK DEFAULT
         # Ícone padrão
         icon = "images/host.png"
         
-        # Determina o label baseado no elementtype
-        # elementtype 0 = Host
+        # Determina o NODE name e LABEL baseado no elementtype
+        # elementtype 0 = Host -> NODE = host name (via API), LABEL = host name
+        # elementtype 4 = Map -> NODE = label, LABEL = label
         if elementtype == '0' and selement.get('elements'):
             elements = selement.get('elements', [])
             if elements and 'hostid' in elements[0]:
                 hostid = elements[0]['hostid']
-                # Usa o campo 'host' do host como label
-                if str(hostid) in trigger_host_map:
-                    label = trigger_host_map[str(hostid)]
+                # Busca o nome do host via API do Zabbix usando hostid como filtro
+                host_name = None
+                if zabbix_api_url and zabbix_token:
+                    host_name = get_zabbix_host(zabbix_api_url, zabbix_token, hostid)
+                # Usa o nome do host retornado pela API para NODE e LABEL
+                if host_name:
+                    node_name = host_name
+                    label = host_name
+        elif elementtype == '4':
+            # elementtype 4 = Map element
+            # NODE name = label, LABEL = label
+            node_name = label
+        else:
+            # Para outros tipos, usa o label como node_name
+            node_name = label.replace('{HOST.NAME}', 'host')
         
-        # Gera nome único para o nó
-        node_name = label.replace('{HOST.NAME}', 'host')
+        # Garante nome único para o nó
         if node_name in node_names:
             # Adiciona sufixo numérico para tornar único
             counter = node_names[node_name] + 1
@@ -301,9 +382,9 @@ LINK DEFAULT
             # Constrói a URL do gráfico com os itemids encontrados
             if unique_itemids:
                 itemids_params = '&'.join([f'itemids[{i}]={itemid}' for i, itemid in enumerate(unique_itemids)])
-                graph_url = f"http://zabbix.iper.net.br:8070/zabbix/chart.php?from=now-24h&to=now&{itemids_params}&type=0&profileIdx=web.item.graph.filter&profileIdx2=0&batch=1&width=800&height=200"
+                graph_url = f"{zabbix_url}/zabbix/chart.php?from=now-24h&to=now&{itemids_params}&type=0&profileIdx=web.item.graph.filter&profileIdx2=0&batch=1&width=800&height=200"
             else:
-                graph_url = "http://zabbix.iper.net.br:8070/zabbix/chart.php?from=now-24h&to=now&itemids[0]=0&itemids[1]=0&type=0&profileIdx=web.item.graph.filter&profileIdx2=0&batch=1&width=800&height=200"
+                graph_url = f"{zabbix_url}/zabbix/chart.php?from=now-24h&to=now&itemids[0]=0&itemids[1]=0&type=0&profileIdx=web.item.graph.filter&profileIdx2=0&batch=1&width=800&height=200"
             
             # Constrói a linha TARGET com host e itemids
             if unique_hosts and unique_itemids:
@@ -399,6 +480,24 @@ Exemplos de uso:
         default='configs',
         help='Diretório de saída para os arquivos .conf (padrão: configs)'
     )
+    parser.add_argument(
+        '-u', '--url',
+        type=str,
+        default='http://zabbix.iper.net.br:8070',
+        help='URL base do Zabbix para gráficos (padrão: http://zabbix.iper.net.br:8070)'
+    )
+    parser.add_argument(
+        '-t', '--token',
+        type=str,
+        default='',
+        help='Token de API do Zabbix (opcional)'
+    )
+    parser.add_argument(
+        '--api-url',
+        type=str,
+        default='http://zabbix.iper.net.br:8070/api_jsonrpc.php',
+        help='URL da API do Zabbix JSON-RPC (padrão: http://zabbix.iper.net.br:8070/api_jsonrpc.php)'
+    )
     
     args = parser.parse_args()
     
@@ -425,7 +524,14 @@ Exemplos de uso:
     
     for json_file in json_files:
         try:
-            generate_conf_from_json(json_file, output_dir=output_dir, maps_dir=args.maps_dir)
+            generate_conf_from_json(
+                json_file,
+                output_dir=output_dir,
+                maps_dir=args.maps_dir,
+                zabbix_url=args.url,
+                zabbix_api_url=args.api_url,
+                zabbix_token=args.token
+            )
         except Exception as e:
             print(f"Erro ao processar {json_file}: {e}")
 
