@@ -1,0 +1,1235 @@
+{
+  "sysmapid": "4",
+  "name": "atm",
+  "width": "1500",
+  "height": "1000",
+  "backgroundid": "0",
+  "label_type": "0",
+  "label_location": "0",
+  "highlight": "1",
+  "expandproblem": "0",
+  "markelements": "1",
+  "show_unack": "0",
+  "grid_size": "40",
+  "grid_show": "1",
+  "grid_align": "1",
+  "label_format": "0",
+  "label_type_host": "2",
+  "label_type_hostgroup": "2",
+  "label_type_trigger": "2",
+  "label_type_map": "2",
+  "label_type_image": "2",
+  "label_string_host": "",
+  "label_string_hostgroup": "",
+  "label_string_trigger": "",
+  "label_string_map": "",
+  "label_string_image": "",
+  "iconmapid": "0",
+  "expand_macros": "1",
+  "severity_min": "0",
+  "userid": "3",
+  "private": "1",
+  "show_suppressed": "0",
+  "selements": [
+    {
+      "selementid": "8",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "3",
+      "x": "640",
+      "y": "240",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11064"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "9",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "189",
+      "iconid_on": "0",
+      "label": "alt/ggnet",
+      "label_location": "3",
+      "x": "80",
+      "y": "240",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "10",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "189",
+      "iconid_on": "0",
+      "label": "infonet",
+      "label_location": "-1",
+      "x": "560",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "11",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "189",
+      "iconid_on": "0",
+      "label": "unifique",
+      "label_location": "3",
+      "x": "760",
+      "y": "40",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "12",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "189",
+      "iconid_on": "0",
+      "label": "bkup",
+      "label_location": "3",
+      "x": "520",
+      "y": "40",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "13",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "189",
+      "iconid_on": "0",
+      "label": "ultranet",
+      "label_location": "-1",
+      "x": "1200",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "14",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "3",
+      "x": "360",
+      "y": "120",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11066"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "15",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "-1",
+      "x": "720",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11065"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "16",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "-1",
+      "x": "960",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11068"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "17",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "-1",
+      "x": "320",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11070"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "18",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "3",
+      "x": "200",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11067"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "19",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "3",
+      "x": "840",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11069"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "20",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "197",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "-1",
+      "x": "640",
+      "y": "840",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11073"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "21",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "3",
+      "x": "440",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11071"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "22",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "atm-router-reserva",
+      "label_location": "3",
+      "x": "1080",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "23",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "190",
+      "iconid_on": "0",
+      "label": "storage",
+      "label_location": "-1",
+      "x": "200",
+      "y": "280",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "24",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "-1",
+      "x": "80",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11063"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "25",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "196",
+      "iconid_on": "0",
+      "label": "server",
+      "label_location": "-1",
+      "x": "80",
+      "y": "760",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "26",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "195",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "3",
+      "x": "1200",
+      "y": "280",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11062"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "27",
+      "sysmapid": "4",
+      "elementtype": "4",
+      "iconid_off": "196",
+      "iconid_on": "0",
+      "label": "server",
+      "label_location": "3",
+      "x": "1400",
+      "y": "280",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    },
+    {
+      "selementid": "28",
+      "sysmapid": "4",
+      "elementtype": "0",
+      "iconid_off": "197",
+      "iconid_on": "0",
+      "label": "{HOST.NAME}\r\n{HOST.CONN}",
+      "label_location": "-1",
+      "x": "1400",
+      "y": "520",
+      "iconid_disabled": "0",
+      "iconid_maintenance": "0",
+      "elementsubtype": "0",
+      "areatype": "0",
+      "width": "200",
+      "height": "200",
+      "viewtype": "0",
+      "use_iconmap": "0",
+      "evaltype": "0",
+      "elements": [
+        {
+          "hostid": "11072"
+        }
+      ],
+      "urls": [],
+      "tags": [],
+      "permission": 2
+    }
+  ],
+  "links": [
+    {
+      "linkid": "82",
+      "sysmapid": "4",
+      "selementid1": "17",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "41",
+          "linkid": "82",
+          "triggerid": "84595",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "7",
+      "sysmapid": "4",
+      "selementid1": "8",
+      "selementid2": "9",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "eth1",
+      "linktriggers": [
+        {
+          "linktriggerid": "7",
+          "linkid": "7",
+          "triggerid": "84463",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "8",
+      "sysmapid": "4",
+      "selementid1": "10",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "8",
+          "linkid": "8",
+          "triggerid": "84471",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "9",
+      "sysmapid": "4",
+      "selementid1": "8",
+      "selementid2": "11",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "9",
+          "linkid": "9",
+          "triggerid": "84474",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "10",
+      "sysmapid": "4",
+      "selementid1": "8",
+      "selementid2": "12",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "10",
+          "linkid": "10",
+          "triggerid": "84476",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "11",
+      "sysmapid": "4",
+      "selementid1": "13",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "11",
+          "linkid": "11",
+          "triggerid": "84469",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "12",
+      "sysmapid": "4",
+      "selementid1": "8",
+      "selementid2": "14",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "12",
+          "linkid": "12",
+          "triggerid": "84464",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "13",
+      "sysmapid": "4",
+      "selementid1": "15",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "100m",
+      "linktriggers": [
+        {
+          "linktriggerid": "13",
+          "linkid": "13",
+          "triggerid": "84465",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "14",
+      "sysmapid": "4",
+      "selementid1": "16",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "14",
+          "linkid": "14",
+          "triggerid": "84466",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "15",
+      "sysmapid": "4",
+      "selementid1": "17",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "15",
+          "linkid": "15",
+          "triggerid": "84467",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "16",
+      "sysmapid": "4",
+      "selementid1": "18",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "16",
+          "linkid": "16",
+          "triggerid": "84468",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "17",
+      "sysmapid": "4",
+      "selementid1": "19",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "17",
+          "linkid": "17",
+          "triggerid": "84470",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "18",
+      "sysmapid": "4",
+      "selementid1": "8",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "eth10\r\neth42",
+      "linktriggers": [
+        {
+          "linktriggerid": "18",
+          "linkid": "18",
+          "triggerid": "84472",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "19",
+      "sysmapid": "4",
+      "selementid1": "21",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "19",
+          "linkid": "19",
+          "triggerid": "84473",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "20",
+      "sysmapid": "4",
+      "selementid1": "22",
+      "selementid2": "8",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "20",
+          "linkid": "20",
+          "triggerid": "84475",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "21",
+      "sysmapid": "4",
+      "selementid1": "15",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "100m",
+      "linktriggers": [
+        {
+          "linktriggerid": "21",
+          "linkid": "21",
+          "triggerid": "84491",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "22",
+      "sysmapid": "4",
+      "selementid1": "14",
+      "selementid2": "9",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "22",
+          "linkid": "22",
+          "triggerid": "84511",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "23",
+      "sysmapid": "4",
+      "selementid1": "19",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "23",
+          "linkid": "23",
+          "triggerid": "84590",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "24",
+      "sysmapid": "4",
+      "selementid1": "18",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "24",
+          "linkid": "24",
+          "triggerid": "84500",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "25",
+      "sysmapid": "4",
+      "selementid1": "18",
+      "selementid2": "23",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "25",
+          "linkid": "25",
+          "triggerid": "84501",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "26",
+      "sysmapid": "4",
+      "selementid1": "17",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "10g",
+      "linktriggers": [
+        {
+          "linktriggerid": "26",
+          "linkid": "26",
+          "triggerid": "84604",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "27",
+      "sysmapid": "4",
+      "selementid1": "21",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "10g",
+      "linktriggers": [
+        {
+          "linktriggerid": "27",
+          "linkid": "27",
+          "triggerid": "84689",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "28",
+      "sysmapid": "4",
+      "selementid1": "24",
+      "selementid2": "9",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "28",
+          "linkid": "28",
+          "triggerid": "84457",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "29",
+      "sysmapid": "4",
+      "selementid1": "24",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "29",
+          "linkid": "29",
+          "triggerid": "84458",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "30",
+      "sysmapid": "4",
+      "selementid1": "24",
+      "selementid2": "25",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "30",
+          "linkid": "30",
+          "triggerid": "84460",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "31",
+      "sysmapid": "4",
+      "selementid1": "26",
+      "selementid2": "13",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "31",
+          "linkid": "31",
+          "triggerid": "84450",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "32",
+      "sysmapid": "4",
+      "selementid1": "26",
+      "selementid2": "27",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "32",
+          "linkid": "32",
+          "triggerid": "84451",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "33",
+      "sysmapid": "4",
+      "selementid1": "28",
+      "selementid2": "26",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "33",
+          "linkid": "33",
+          "triggerid": "84454",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "34",
+      "sysmapid": "4",
+      "selementid1": "28",
+      "selementid2": "13",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "10g",
+      "linktriggers": [
+        {
+          "linktriggerid": "34",
+          "linkid": "34",
+          "triggerid": "84752",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "35",
+      "sysmapid": "4",
+      "selementid1": "28",
+      "selementid2": "27",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "eth1",
+      "linktriggers": [
+        {
+          "linktriggerid": "35",
+          "linkid": "35",
+          "triggerid": "84728",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "36",
+      "sysmapid": "4",
+      "selementid1": "16",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "36",
+          "linkid": "36",
+          "triggerid": "84582",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "37",
+      "sysmapid": "4",
+      "selementid1": "10",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "1g",
+      "linktriggers": [
+        {
+          "linktriggerid": "37",
+          "linkid": "37",
+          "triggerid": "84811",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "38",
+      "sysmapid": "4",
+      "selementid1": "13",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "10g",
+      "linktriggers": [
+        {
+          "linktriggerid": "38",
+          "linkid": "38",
+          "triggerid": "84769",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    },
+    {
+      "linkid": "39",
+      "sysmapid": "4",
+      "selementid1": "22",
+      "selementid2": "20",
+      "drawtype": "0",
+      "color": "00CC00",
+      "label": "10g",
+      "linktriggers": [
+        {
+          "linktriggerid": "39",
+          "linkid": "39",
+          "triggerid": "84770",
+          "drawtype": "0",
+          "color": "DD0000"
+        }
+      ],
+      "permission": 2
+    }
+  ]
+}

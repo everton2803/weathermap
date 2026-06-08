@@ -1,0 +1,70 @@
+{
+  "source_map": "/usr/share/zabbix/weathermap/web/../web/maps/athila.json",
+  "requested_trigger_ids": [
+    "84305",
+    "84306"
+  ],
+  "triggers": [
+    {
+      "triggerid": "84305",
+      "description": "Interface sfp-sfpplus1(switch): weathermap",
+      "priority": "0",
+      "status": "0",
+      "value": "0",
+      "expression": "abs({181566})<0\r\nand\r\nabs({181567})<0",
+      "hosts": [
+        {
+          "hostid": "11061",
+          "host": "athila-router-fibra"
+        }
+      ],
+      "functions": [
+        {
+          "functionid": "181566",
+          "itemid": "96091",
+          "triggerid": "84305",
+          "parameter": "$",
+          "function": "last"
+        },
+        {
+          "functionid": "181567",
+          "itemid": "96517",
+          "triggerid": "84305",
+          "parameter": "$",
+          "function": "last"
+        }
+      ]
+    },
+    {
+      "triggerid": "84306",
+      "description": "Interface sfp-sfpplus2(): weathermap",
+      "priority": "0",
+      "status": "0",
+      "value": "0",
+      "expression": "abs({181568})<0\r\nand\r\nabs({181569})<0",
+      "hosts": [
+        {
+          "hostid": "11061",
+          "host": "athila-router-fibra"
+        }
+      ],
+      "functions": [
+        {
+          "functionid": "181568",
+          "itemid": "96092",
+          "triggerid": "84306",
+          "parameter": "$",
+          "function": "last"
+        },
+        {
+          "functionid": "181569",
+          "itemid": "96518",
+          "triggerid": "84306",
+          "parameter": "$",
+          "function": "last"
+        }
+      ]
+    }
+  ],
+  "count": 2
+}
